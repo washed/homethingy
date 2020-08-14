@@ -1,0 +1,44 @@
+version: "3.6"
+
+
+services:
+  deconz:
+    image: marthoc/deconz
+    volumes:
+      - deconz-data:/root/.local/share/dresden-elektronik/deCONZ
+      - /etc/localtime:/etc/localtime:ro
+    hostname: deconz
+    restart: always
+    devices:
+      - /dev/ttyACM0
+    ports:
+      - "880:880"
+      - "8443:8443"
+    environment:
+      - DECONZ_DEVICE=/dev/ttyACM0
+      - DECONZ_WEB_PORT=880
+      - DECONZ_WS_PORT=8443
+      - DEBUG_INFO=1
+      - DEBUG_APS=0
+      - DEBUG_ZCL=0
+      - DEBUG_ZDP=0
+      - DEBUG_OTAU=0
+      - upnp=0
+
+  node-red:
+    build:
+      context: ./node-red
+    environment:
+      - TZ=Europe/Berlin
+      - DECONZ_API_KEY=${DECONZ_API_KEY}
+    ports:
+      - "1880:1880"
+    volumes:
+      - ./node-red/data:/data
+      - /sys/class/thermal/thermal_zone0/temp:/sys/class/thermal/thermal_zone0/temp:ro
+      - /proc/loadavg:/proc/loadavg:ro
+    hostname: node-red
+    restart: always
+
+volumes:
+  deconz-data:
