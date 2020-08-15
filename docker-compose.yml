@@ -1,6 +1,5 @@
 version: "3.6"
 
-
 services:
   deconz:
     image: marthoc/deconz
@@ -26,19 +25,43 @@ services:
       - upnp=0
 
   node-red:
-    build:
-      context: ./node-red
+    image: nodered/node-red
     environment:
       - TZ=Europe/Berlin
       - DECONZ_API_KEY=${DECONZ_API_KEY}
     ports:
       - "1880:1880"
     volumes:
-      - ./node-red/data:/data
+      - ${PWD}/node-red/data:/data
       - /sys/class/thermal/thermal_zone0/temp:/sys/class/thermal/thermal_zone0/temp:ro
       - /proc/loadavg:/proc/loadavg:ro
     hostname: node-red
     restart: always
 
+  influxdb:
+    image: influxdb
+    build:
+      context: ${PWD}/influxdb/
+    hostname: influxdb
+    ports:
+      - "8086:8086"
+    volumes:
+      - influxdb-data:/var/lib/influxdb
+      - $PWD/influxdb/influxdb.conf:/etc/influxdb/influxdb.conf:ro
+    environment:
+      - INFLUXDB_HTTP_AUTH_ENABLED=true
+      - INFLUXDB_ADMIN_USER=${INFLUXDB_ADMIN_USER}
+      - INFLUXDB_ADMIN_PASSWORD=${INFLUXDB_ADMIN_PASSWORD}
+
+  grafana:
+    image: grafana/grafana
+    hostname: grafana
+    ports:
+      - "80:3000"
+    volumes:
+      - grafana-data:/var/lib/grafana
+
 volumes:
   deconz-data:
+  influxdb-data:
+  grafana-data:

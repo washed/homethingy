@@ -396,7 +396,7 @@
   "node-red-contrib-deconz": {
    "name": "node-red-contrib-deconz",
    "version": "1.2.0",
-   "local": false,
+   "local": true,
    "nodes": {
     "in": {
      "name": "in",
@@ -471,7 +471,7 @@
   "node-red-contrib-influxdb": {
    "name": "node-red-contrib-influxdb",
    "version": "0.4.1",
-   "local": false,
+   "local": true,
    "nodes": {
     "influxdb": {
      "name": "influxdb",
@@ -489,7 +489,6 @@
    }
   }
  },
- "_credentialSecret": "4bd945830343b29cd68fc29fe045ce046e29448ca69fae1687f6dbe8e56ba1c2",
  "users": {
   "_": {
    "editor": {
@@ -500,6 +499,9 @@
      "view-node-status": true,
      "view-node-show-label": true,
      "view-show-tips": true
+    },
+    "context": {
+     "flowRefresh": false
     }
    }
   }

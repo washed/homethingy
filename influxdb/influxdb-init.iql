@@ -1,0 +1,6 @@
+CREATE DATABASE db;
+CREATE RETENTION POLICY "four_weeks" ON "db" DURATION 4w REPLICATION 1 DEFAULT;
+CREATE RETENTION POLICY "one_year" ON "db" DURATION 52w REPLICATION 1;
+CREATE RETENTION POLICY "ten_years" ON "db" DURATION 520w REPLICATION 1;
+CREATE CONTINUOUS QUERY "cq_10m" ON "db" BEGIN SELECT mean("temperature") AS "mean_temperature", mean("humidity") AS "mean_humidity", mean("pressure") AS "mean_pressure" INTO "one_year"."downsampled_environmental" FROM "environmental" GROUP BY time(10m) END;
+CREATE CONTINUOUS QUERY "cq_60m" ON "db" BEGIN SELECT mean("temperature") AS "mean_temperature", mean("humidity") AS "mean_humidity", mean("pressure") AS "mean_pressure" INTO "ten_years"."downsampled_environmental" FROM "downsampled_environmental" GROUP BY time(60m) END;

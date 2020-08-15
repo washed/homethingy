@@ -487,9 +487,25 @@
      "file": "/data/node_modules/node-red-contrib-influxdb/influxdb.js"
     }
    }
+  },
+  "node-red-contrib-function-npm": {
+   "name": "node-red-contrib-function-npm",
+   "version": "0.4.0",
+   "local": false,
+   "nodes": {
+    "function-npm": {
+     "name": "function-npm",
+     "types": [
+      "function-npm"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-function-npm",
+     "file": "/data/node_modules/node-red-contrib-function-npm/function-npm/function-npm.js"
+    }
+   }
   }
  },
- "_credentialSecret": "4bd945830343b29cd68fc29fe045ce046e29448ca69fae1687f6dbe8e56ba1c2",
  "users": {
   "_": {
    "editor": {
@@ -500,6 +516,9 @@
      "view-node-status": true,
      "view-node-show-label": true,
      "view-show-tips": true
+    },
+    "context": {
+     "flowRefresh": false
     }
    }
   }
