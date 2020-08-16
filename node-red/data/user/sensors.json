@@ -1,0 +1,53 @@
+{
+  "sensors": [
+    {
+      "name": "DeCONZ Daylight",
+      "id": "572baf0c-7857-4dfc-85a3-09ff9a6b3cb0",
+      "data": [
+        {
+          "name": "dark",
+          "property_name": "dark",
+          "uniqueid_suffix": "-01"
+        },
+        {
+          "name": "daylight",
+          "property_name": "daylight",
+          "uniqueid_suffix": "-01"
+        },
+        {
+          "name": "sunrise",
+          "property_name": "sunrise",
+          "uniqueid_suffix": "-01"
+        },
+        {
+          "name": "sunset",
+          "property_name": "sunset",
+          "uniqueid_suffix": "-01"
+        }
+      ]
+    },
+    {
+      "name": "Aqara/Xiaomi WSDCGQ11LM",
+      "id": "9628670b-1e3c-44f1-9c0b-39fe0ae2f749",
+      "data": [
+        {
+          "name": "temperature",
+          "uniqueid_suffix": "-01-0402",
+          "factor": 0.01,
+          "property_name": "temperature"
+        },
+        {
+          "name": "pressure",
+          "uniqueid_suffix": "-01-0403",
+          "property_name": "pressure"
+        },
+        {
+          "name": "humidity",
+          "uniqueid_suffix": "-01-0405",
+          "factor": 0.01,
+          "property_name": "humidity"
+        }
+      ]
+    }
+  ]
+}

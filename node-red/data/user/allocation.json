@@ -1,0 +1,24 @@
+{
+  "allocation": {
+    "sensors": [
+      {
+        "name": "daylight",
+        "location": "house",
+        "typeid": "572baf0c-7857-4dfc-85a3-09ff9a6b3cb0",
+        "uniqueid": "00:21:2e:ff:ff:05:96:c6"
+      },
+      {
+        "name": "thp",
+        "location": "office",
+        "typeid": "9628670b-1e3c-44f1-9c0b-39fe0ae2f749",
+        "uniqueid": "00:15:8d:00:04:7d:ee:64"
+      },
+      {
+        "name": "thp",
+        "location": "living_room",
+        "typeid": "9628670b-1e3c-44f1-9c0b-39fe0ae2f749",
+        "uniqueid": "00:15:8d:00:05:40:34:bd"
+      }
+    ]
+  }
+}
