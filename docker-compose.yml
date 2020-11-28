@@ -35,6 +35,7 @@ services:
       - ${PWD}/node-red/data:/data
       - /sys/class/thermal/thermal_zone0/temp:/sys/class/thermal/thermal_zone0/temp:ro
       - /proc/loadavg:/proc/loadavg:ro
+      - influxdb-data:/var/lib/influxdb
     hostname: node-red
     restart: always
 

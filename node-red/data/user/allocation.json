@@ -18,6 +18,24 @@
         "location": "living_room",
         "typeid": "9628670b-1e3c-44f1-9c0b-39fe0ae2f749",
         "uniqueid": "00:15:8d:00:05:40:34:bd"
+      },
+      {
+        "name": "thp",
+        "location": "terrace",
+        "typeid": "9628670b-1e3c-44f1-9c0b-39fe0ae2f749",
+        "uniqueid": "00:15:8d:00:03:20:c3:7e"
+      },
+      {
+        "name": "thp",
+        "location": "fridge-1",
+        "typeid": "9628670b-1e3c-44f1-9c0b-39fe0ae2f749",
+        "uniqueid": "00:15:8d:00:05:40:69:22"
+      },
+      {
+        "name": "thp",
+        "location": "fridge-2",
+        "typeid": "9628670b-1e3c-44f1-9c0b-39fe0ae2f749",
+        "uniqueid": "00:15:8d:00:05:40:7b:5f"
       }
     ]
   }
